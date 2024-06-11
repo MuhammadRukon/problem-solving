@@ -7,8 +7,10 @@ int main()
     string line;
     getline(cin, line);
     line += " ";
+    
     int size = line.size();
     string name;
+
     int i=0;
     int flag = 1;
 

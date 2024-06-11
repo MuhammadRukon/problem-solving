@@ -1,9 +1,10 @@
-#include<iostream>
-#include<iomanip>
+#include<bits/stdc++.h>
 using namespace std;
-int main(){
-    int * p = new int;
-    *p = 50;
-    cout<<*p;
 
+int main(){
+   vector<int> v={1,2,3,4,5};
+
+        cout<<v[v.size()-1]<<endl;
+
+    return 0;
 }

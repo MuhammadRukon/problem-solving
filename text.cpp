@@ -2,9 +2,22 @@
 using namespace std;
 
 int main(){
-   vector<int> v={1,2,3,4,5};
-
-        cout<<v[v.size()-1]<<endl;
-
+    int n,q;
+    cin>>n>>q;
+    vector<int>v(n);
+    for(int i=0; i<n; i++){
+        cin>>v[i];
+    }
+    while(q--){
+        int x;
+        cin>>x;
+        auto it = find(v.begin(), v.end(), x);
+        if(it == v.end()){
+            cout<<"not found"<<endl;
+        }else{
+            cout<<"found"<<endl;
+        }
+    }
+    
     return 0;
 }

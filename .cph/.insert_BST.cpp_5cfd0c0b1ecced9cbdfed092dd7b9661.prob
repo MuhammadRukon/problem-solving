@@ -1,0 +1,1 @@
+{"name":"Local: insert_BST","url":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\insert_BST.cpp","tests":[{"id":1724863926004,"input":"20 10 30 -1 15 25 35 -1 -1 -1 -1 -1 -1\n13 ","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\insert_BST.cpp","group":"local","local":true}

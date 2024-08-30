@@ -1,0 +1,1 @@
+{"name":"Local: BST","url":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\BST.cpp","tests":[{"id":1724790398607,"input":"10 5 15 2 6 12 16 -1 3 -1 -1 -1 -1 -1 -1 -1 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\BST.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: covert_array_to_BST","url":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\covert_array_to_BST.cpp","tests":[{"id":1724865069399,"input":"6\n2 4 8 12 15 18","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\covert_array_to_BST.cpp","group":"local","local":true}

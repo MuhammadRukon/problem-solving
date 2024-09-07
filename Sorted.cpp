@@ -1,31 +1,23 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main(){
     int t;
     cin >> t;
     while (t--)
     {
         int n;
         cin >> n;
-        int arr[n];
-        int flag = 0;
+        vector<int> numbers(n);
         for (int i = 0; i < n; i++)
         {
-            cin >> arr[i];
+            cin >> numbers[i];
         }
-        int j = 0;
-        while (j < n - 1)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                flag = 1;
-                break;
-            }
-            j++;
+        set<int> numUnique(numbers.begin(), numbers.end());
+        for(auto it = numUnique.begin(); it != numUnique.end(); it++){
+            cout<< *it <<" ";
         }
-        flag ? cout << "NO\n" : cout << "YES\n";
+        cout << endl;
     }
     return 0;
 }

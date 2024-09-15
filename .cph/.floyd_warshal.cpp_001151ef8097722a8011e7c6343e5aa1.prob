@@ -1,0 +1,1 @@
+{"name":"Local: floyd_warshal","url":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\floyd_warshal.cpp","tests":[{"id":1726326721559,"input":"4 6\n3 2 8\n2 1 5\n1 0 2\n3 0 20\n0 1 3\n1 2 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\muhammad\\Desktop\\phitron-cpp\\floyd_warshal.cpp","group":"local","local":true}

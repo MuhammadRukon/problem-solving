@@ -1,56 +1,77 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int n, m, si, sj;
-char a[1000][1000];
-bool vis[1000][1000];
-
-bool reached = false;
-vector<pair<int, int>> d = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
-
-bool valid(int ci, int cj)
+const long long N = 10000;
+vector<pair<int, int>> v[N];
+long long dis[N];
+class cmp
 {
-    if (ci < 0 || ci >= n || cj < 0 || cj >= m)
-        return false;
-    return true;
-}
-
-void dfs(int si, int sj)
-{
-    vis[si][sj] = true;
-    if (a[si][sj] == 'B')
+public:
+    bool operator()(pair<int, long long> a, pair<int, long long> b)
     {
-        reached = true;
-        return;
+        return a.second > b.second;
     }
-    for (int i = 0; i < 4; i++)
+};
+
+void dijkstra(int s)
+{
+    priority_queue<pair<int, long long>, vector<pair<int, long long>>, cmp> pq;
+    pq.push({s, 0});
+    dis[s] = 0;
+    while (!pq.empty())
     {
-        int ci = si + d[i].first;
-        int cj = sj + d[i].second;
-        if (valid(ci, cj) && vis[ci][cj] == false && a[ci][cj] != '#')
+        pair<int, int> parent = pq.top();
+        pq.pop();
+        int node = parent.first;
+        long long cost = parent.second;
+
+        for (pair<int, long long> child : v[node])
         {
-            dfs(ci, cj);
+            int childNode = child.first;
+            long long childCost = child.second;
+
+            if (cost + childCost < dis[childNode])
+            {
+                dis[childNode] = cost + childCost;
+                pq.push({childNode, dis[childNode]});
+            }
         }
     }
 }
 int main()
 {
-
-    cin >> n >> m;
-    for (int i = 0; i < n; i++)
+    int n, e;
+    cin >> n >> e;
+    while (e--)
     {
-        for (int j = 0; j < m; j++)
+        int a, b, w;
+        cin >> a >> b >> w;
+        v[a].push_back({b, w});
+    }
+    for (int i = 1; i <= n; i++)
+    {
+        dis[i] = INT_MAX;
+    }
+
+    int s;
+    cin >> s;
+    int t;
+    cin >> t;
+    dijkstra(s);
+    while (t--)
+    {
+        int d;
+        long long c;
+        cin >> d >> c;
+        if (dis[d] <= c)
         {
-            cin >> a[i][j];
-            if (a[i][j] == 'A')
-            {
-                si = i;
-                sj = j;
-            }
+
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
         }
     }
-    memset(vis, false, sizeof(vis));
-    dfs(si, sj);
-    reached ? cout << "YES" << endl : cout << "NO" << endl;
+
     return 0;
 }
